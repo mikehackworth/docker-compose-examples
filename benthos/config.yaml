@@ -1,0 +1,11 @@
+input:
+  generate:
+    interval: 20s
+    mapping: root = "hello world"
+
+pipeline:
+  processors:
+    - mapping: root = content().uppercase()
+
+output:
+  stdout: {}

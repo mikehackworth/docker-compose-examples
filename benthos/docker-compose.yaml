@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  benthos:
+    image: jeffail/benthos:4
+    volumes:
+      - ./config.yaml:/benthos.yaml:ro
+    ports:
+      - "4195:4195"
