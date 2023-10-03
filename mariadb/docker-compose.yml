@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.5
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      - mariadb
+
+volumes:
+  data:
+
+networks:
+  mariadb:
+    name: mariadb
